@@ -1,0 +1,14 @@
+<p>locations works!</p>
+
+<div class="center">
+    <button (click)="newLocation()" class="button" >Add new location</button>
+    <!--button (click)="updateLocation()" class="button" >Update location</button-->
+    
+</div>
+
+<div class="locations">
+    LOCALIZACIONES:
+    <app-location-card *ngFor="let location of locations; index as i"
+      [location]="location" [index]="i">
+    </app-location-card>  
+</div>

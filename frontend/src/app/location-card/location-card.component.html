@@ -1,0 +1,30 @@
+<div class="location-card" *ngIf="location">
+
+    <div class="location-name">
+        Location {{index+1}}: {{location.nombre}}
+    </div>
+
+    <div class="location">
+        Estado: {{location.estado}}
+    </div>
+
+    <div class="location">
+        Densidad Poblacional: {{location.densidad}}
+    </div>
+
+    <div class="location">
+        Latitud: {{location.latitud}}
+    </div>
+
+    <div class="location">
+        Longitud: {{location.longitud}}
+    </div>
+
+    
+    
+    <div class="center">
+        <button (click)="newLocation()" class="button" >AÑADIR</button>
+    </div>
+
+</div>
+<br>

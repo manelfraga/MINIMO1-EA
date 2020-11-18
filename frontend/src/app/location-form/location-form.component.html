@@ -1,0 +1,55 @@
+<p>Añada una localizacion</p>
+<div class="login">
+    <h2 class="login-header">New Location</h2>
+    <form [formGroup]="LocationForm" class="login-container" (ngSubmit)="submitLocation()">
+      <input type="nombre" placeholder="Nombre*" formControlName="nombre" />
+      <ng-container
+        *ngIf="!formControls.nombre.valid &&formControls.nombre.touched"
+      >
+        <p *ngIf="formControls.nombre.errors.required">
+          Nombre is required
+        </p>
+      </ng-container>
+  
+      <input type="estado" placeholder="Estado*" formControlName="estado" />
+      <ng-container
+        *ngIf="!formControls.estado.valid &&formControls.estado.touched"
+      >
+        <p *ngIf="formControls.estado.errors.required">
+          Estado is required
+        </p>
+      </ng-container>
+  
+      <input type="densidad" placeholder="Densidad Poblacional*" formControlName="densidad" />
+      <ng-container
+        *ngIf="!formControls.densidad.valid"
+      >
+        <p *ngIf="formControls.densidad.errors.required">
+          
+        </p>
+      </ng-container>
+  
+      <input type="latitud" placeholder="Latitud*" formControlName="latitud" />
+      <ng-container
+        *ngIf="formControls.latitud.touched && !formControls.latitud.valid"
+      >
+      <p *ngIf="formControls.latitud.errors.required">
+       Latitud is required
+      </p>
+      </ng-container>
+
+      <input type="longitud" placeholder="Longitud*" formControlName="longitud" />
+      <ng-container
+        *ngIf="formControls.longitud.touched && !formControls.longitud.valid"
+      >
+      <p *ngIf="formControls.longitud.errors.required">
+       Longitud is required
+      </p>
+      </ng-container>
+  
+      <p>
+        <input type="submit" value="Submit" [disabled]="LocationForm.invalid" />
+      </p>
+    </form>
+  </div>
+  
